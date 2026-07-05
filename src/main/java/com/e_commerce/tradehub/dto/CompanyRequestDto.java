@@ -1,17 +1,11 @@
-package com.noobdevs.tradehub.model;
+package com.e_commerce.tradehub.dto;
 
-import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity
 @Data
-@Table(name = "companies")
-public class Company extends User{
-
+public class CompanyRequestDto {
     private String address;
     private String bankAccountNumber;
     private String accHolderName;
     private String bankName;
-
-
 }
