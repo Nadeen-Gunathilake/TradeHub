@@ -1,4 +1,4 @@
-package com.noobdevs.tradehub;
+package com.e_commerce.tradehub;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.noobdevs.tradehub.model;
+package com.e_commerce.tradehub.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

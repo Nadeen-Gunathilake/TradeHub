@@ -1,6 +1,6 @@
-package com.noobdevs.tradehub.repository;
+package com.e_commerce.tradehub.repository;
 
-import com.noobdevs.tradehub.model.Customer;
+import com.e_commerce.tradehub.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CustomerRepository extends JpaRepository<Customer,Long> {
