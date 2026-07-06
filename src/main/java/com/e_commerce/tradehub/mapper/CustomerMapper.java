@@ -4,10 +4,14 @@ import com.e_commerce.tradehub.dto.CustomerRequestDto;
 import com.e_commerce.tradehub.dto.CustomerResponseDto;
 import com.e_commerce.tradehub.dto.UserResponseDto;
 import com.e_commerce.tradehub.model.Customer;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class CustomerMapper {
+
+    private final UserMapper userMapper;
 
     public Customer toEntity(CustomerRequestDto dto){
         Customer entity = new Customer();
@@ -19,14 +23,10 @@ public class CustomerMapper {
     }
 
     public CustomerResponseDto toResponseDto(Customer entity){
-        UserResponseDto userResponseDto = new UserResponseDto();
-        userResponseDto.setRegistrationNumber(entity.getRegistrationNumber());
-        userResponseDto.setName(entity.getName());
-        userResponseDto.setUserName(entity.getUserName());
 
         CustomerResponseDto dto = new CustomerResponseDto();
         dto.setShippingAddress(entity.getShippingAddress());
-        dto.setUserResponseDto(userResponseDto);
+        dto.setUserResponseDto(userMapper.toResponseDto(entity));
 
         return dto;
 
