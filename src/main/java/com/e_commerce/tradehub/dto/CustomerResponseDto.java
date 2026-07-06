@@ -4,4 +4,6 @@ import lombok.Data;
 
 @Data
 public class CustomerResponseDto {
+    private UserResponseDto userResponseDto;
+    private String shippingAddress;
 }
