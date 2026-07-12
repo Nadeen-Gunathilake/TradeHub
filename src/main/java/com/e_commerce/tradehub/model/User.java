@@ -1,6 +1,9 @@
 package com.e_commerce.tradehub.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Entity
@@ -15,10 +18,17 @@ public abstract class User {
     /*userName-AccountName
     name-Company/Customer Name
     */
-    private String userName;
-    private String name;
-    private String password;
-    private String registrationNumber;
 
+    @NotBlank(message = "Username is required")
+    private String userName;
+
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    @NotBlank(message = "Password is required")
+    @Size(min = 8,message = "Password should be at least 8 digits")
+    private String password;
+
+    private String registrationNumber;
 
 }
